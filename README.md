@@ -1,10 +1,14 @@
 # DevOps Portfolio —  Path
 
-Repo de práctica del plan DevOps.
+Demostración del flujo Gitflow aplicado a scripts de administración Linux.
 
-## Ramas
-- `main` — código estable, solo merge via PR
-- `develop` — integración continua
-- `feature/*` — funcionalidades nuevas
-- `hotfix/*` — correcciones urgentes en producción
-# Develop branch activa
+## Flujo de trabajo
+
+| Rama | Propósito | Se crea desde | Merge hacia |
+|---|---|---|---|
+| `main` | Código en producción | — | — |
+| `develop` | Integración continua | `main` | `main` (via release) |
+| `feature/*` | Nuevas funcionalidades | `develop` | `develop` (via PR) |
+| `release/*` | Preparación de versión | `develop` | `main` + `develop` |
+| `hotfix/*` | Correcciones urgentes | `main` | `main` + `develop` |
+
